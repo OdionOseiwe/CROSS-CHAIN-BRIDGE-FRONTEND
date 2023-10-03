@@ -121,8 +121,8 @@
 }
 
 .transmit__tokenName{
-  margin-right: 10px;
   font-weight: 700;
+  margin-left:10px
 }
 
 .transmit__token{
@@ -145,7 +145,6 @@
 }
 
 .arrow{
-  display: block;
   padding: 5px;
   width: 50px;
   border-radius: 20px;
@@ -156,10 +155,10 @@
 }
 
 .Transfer{
+  display: block;
   padding: 13px;
   font-size: 18px;
   background-color: rgb(15, 81, 222);
-  display: block;
   border-radius: 16px;
   text-align: center;
   margin-top: 5rem;
@@ -189,13 +188,15 @@
 }
 
 .Network{
+  display: flex;
+  flex-direction: row;
+  
   padding: 12px;
   font-size: 18px;
-  background-color: rgb(49, 52, 67);
+  background-color: #303342;
   margin: 10px;
   border-radius: 16px;
   color: rgb(143, 155, 179);
-
 }
 
 .drop_down{
@@ -221,4 +222,36 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+
+.tokens{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 17rem;
+}
+
+.token__1{
+  background-color:  rgb(23, 23, 26);
+  padding: 30px;
+  border-radius: 16px;
+  width: 40rem;
+
+}
+
+.token{
+  padding: 12px;
+  font-size: 18px;
+  background-color: #303342;
+  margin: 10px;
+  border-radius: 16px;
+  color: rgb(143, 155, 179);
+}
+
+.token__select{
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 20px;
 }

@@ -1,48 +1,43 @@
-import Setting from "./img/settings.jpeg"
-import Token from "./img/token.png"
-import Celo from "./img/celoo.png"
 import Arrow from "./img/arrow.png"
+import * as React from 'react';
+import Destinationchain from "./Destination"
+import SourceChain from "./Source"
+import Celo from "./img/celoo.png"
+import ethereum from "./img/ethereum image.png"
+import Token from "./img/token.png"
 
-import Destinationchain from "./SourceChainModal"
 
 function TransferCard() {
+    const [SourceNetwork, changeSourceNetwork] = React.useState("celo Aljores")
+    const [DestinationNetwork, changeDestinationNetwork] = React.useState("Base testnet")
+    const [token, setToken] = React.useState("ODT")
+    const [tokenS, setTokenS] = React.useState(Token)
+    const [Simage, setSImage] = React.useState(Celo)
+    const [Dimage, setDImage] = React.useState(ethereum)
+
+
+
+
+
+    const toggle=()=>{
+        changeSourceNetwork(DestinationNetwork)
+        changeDestinationNetwork(SourceNetwork)
+        setSImage(Dimage)
+        setDImage(Simage)
+    }
+
     return ( 
         <div className="sm:flex flex-col items-center justify-start	">
             <div className="transferCard sm:p-3.5 sm:bg-zinc-800">
-                <div className="SourceChain">
-                    <div className="transmitFrom">
-                        <div className="transmitFrom__box">
-                            <div className="transmitFrom__from">From</div>
-                            <div className="transmitFrom__network" > <img className="transmitFrom__image" src={Celo} alt ="logo"/> <p className="transmitFrom__text">Celo Alfajores</p></div>
-                        </div>
-                        <div>
-                            <div className="transmitFrom__settings">
-                                <a href=""><img className="transmitFrom__image" src={Setting} alt ="logo"/></a>    
-                            </div>
-                        </div>
-                    </div>
-                   
-                    <div className="transmitData">
-                        <div className="transmitDetails">
-                            <div className="transmitDetails__send">Send:</div>
-                            <div className="transmitDetails__Max">Max: <span className="transmitDetails__number">0</span></div>
-                        </div>
-                        <div className="transmit">
-                            <div className="transmitData__Amount">
-                                <input type="text" placeholder="0.0" className="transmitData__input"/>
-                            </div>
-                            <div className="transmit__token">
-                                <img src={Token} alt="logo" className="transmit__image" />
-                                <div className="transmit__tokenName">ODT</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <SourceChain network = {SourceNetwork} update = {changeSourceNetwork} token = {token} updatetoken={setToken}  symbol = {Simage} updateSymbol = {setSImage} TokenS={tokenS} uptokenS={setTokenS}/>
+                <div className="transmit__arrow">
+                    <button onClick={()=>{toggle()}}  className="transmit__arrow"><img src={Arrow} alt="logo" className="arrow" /></button>
 
-                <div className="transmit__arrow"><img src={Arrow} alt="logo" className="arrow" /></div>
-                <Destinationchain/>
-                
-                <div className="Transfer">Transfer</div>
+                </div>
+                <Destinationchain network = {DestinationNetwork} update = {changeDestinationNetwork} token= {token}  symbol = {Dimage} updateSymbol = {setDImage} tokenS= {tokenS}/>
+                <div className="Transfer">
+                    <button >Transfer</button>
+                </div>
             </div>
         </div>
        
