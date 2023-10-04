@@ -5,17 +5,16 @@ import { ConnectButton } from '@rainbow-me/rainbowkit';
 import '@rainbow-me/rainbowkit/styles.css';
 import { getDefaultWallets,RainbowKitProvider,darkTheme} from '@rainbow-me/rainbowkit';
 import { configureChains, createConfig, WagmiConfig } from 'wagmi';
-import {mainnet, polygon, optimism, arbitrum, base, zora,} from 'wagmi/chains';
+import {mainnet, polygon, base, fantom, polygonZkEvmTestnet, celoAlfajores, goerli,} from 'wagmi/chains';
 import { alchemyProvider } from 'wagmi/providers/alchemy';
 import { publicProvider } from 'wagmi/providers/public';
-import Button from '@mui/material/Button';
-
+import ButtonMint from './Components/MintButton';
 
 function App() {
   const { chains, publicClient } = configureChains(
-    [mainnet, polygon, optimism, arbitrum, base, zora],
+    [mainnet, polygon, celoAlfajores, polygonZkEvmTestnet, base, fantom, goerli],
     [
-      alchemyProvider({ apiKey: process.env.ALCHEMY_ID }),
+      alchemyProvider({ apiKey: "https://celo-alfajores.infura.io/v3/625725aff2fc4b10af162d3804eb52e5"}),
       publicProvider()
     ]
   );
@@ -31,6 +30,7 @@ function App() {
     connectors,
     publicClient
   })
+
   return (
     <WagmiConfig config={wagmiConfig}>
     <RainbowKitProvider chains={chains} theme={darkTheme({
@@ -43,7 +43,7 @@ function App() {
     <div className='layout'>
       <div className='heading'>
         <h2 className='text-white text-3xl'>Next Bridge</h2>
-        <Button variant="contained">Mint ODT</Button>
+        <ButtonMint/>
       <ConnectButton showBalance={{
           smallScreen: false,
           largeScreen: true,

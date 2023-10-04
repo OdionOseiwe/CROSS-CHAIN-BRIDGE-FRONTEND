@@ -1,7 +1,7 @@
 import Arrow from "./img/arrow.png"
 import * as React from 'react';
-import Destinationchain from "./Destination"
-import SourceChain from "./Source"
+import Destinationchain from "./Components/Destination"
+import SourceChain from "./Components/Source"
 import Celo from "./img/celoo.png"
 import ethereum from "./img/ethereum image.png"
 import Token from "./img/token.png"
@@ -10,14 +10,10 @@ import Token from "./img/token.png"
 function TransferCard() {
     const [SourceNetwork, changeSourceNetwork] = React.useState("celo Aljores")
     const [DestinationNetwork, changeDestinationNetwork] = React.useState("Base testnet")
-    const [token, setToken] = React.useState("ODT")
+    const [token, setToken] = React.useState("HPT")
     const [tokenS, setTokenS] = React.useState(Token)
     const [Simage, setSImage] = React.useState(Celo)
     const [Dimage, setDImage] = React.useState(ethereum)
-
-
-
-
 
     const toggle=()=>{
         changeSourceNetwork(DestinationNetwork)

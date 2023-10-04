@@ -3,11 +3,11 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import React from "react";
-import Token from "./img/token.png"
-import ethereum from "./img/ethereum image.png"
-import fantom from "./img/fantom.png"
-import bnb from "./img/binance.png"
-import matic from "./img/matic.logo.webp"
+import Token from "../img/token.png"
+import ethereum from "../img/ethereum image.png"
+import fantom from "../img/fantom.png"
+import bnb from "../img/binance.png"
+import matic from "../img/matic.logo.webp"
 import ArrowDropDownCircleOutlinedIcon from '@mui/icons-material/ArrowDropDownCircleOutlined';
 
 function Tokens(props) {
@@ -42,7 +42,7 @@ function Tokens(props) {
                                         <button onClick= {() => {updateTokens("WFTM", fantom) }} style={{ backgroundColor: props.token === "WFTM" ? 'slategray': 'black'}}
  className="Network" >  <img src={fantom} alt="logo" className="transmit__image" /> WFTM</button>
                                         <button onClick= {() => {updateTokens("ODT", Token) }} style={{ backgroundColor: props.token === "ODT" ? 'slategray': 'black'}}
- className="Network" >  <img src={Token} alt="logo" className="transmit__image" /> ODT</button>
+ className="Network" >  <img src={Token} alt="logo" className="transmit__image" /> HPT</button>
                                     </div>
                                 </div>
                             </div>
